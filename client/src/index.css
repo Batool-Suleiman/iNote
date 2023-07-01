@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600;700&display=swap');
+
+/* 
+  Colors: 
+    #88CB88 darker
+    #A9E2A8 
+    rgb(241, 245, 249) dark
+    rgb(241, 245, 249) light
+    #333
+    #5a5a5a
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Nunito' ,'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+body {
+  background-color: rgb(226, 232, 240);
+}
+
+/* ------------ NOTES PAGE ------------ */
+
+.logo {
+  width: 25%;
+}
+
+.notes-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.notes-page header {
+  max-width: 1920px;
+  min-height: 100px;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.notesNav {
+  text-decoration: none;
+  color: #333;
+}
+
+.notes-page header .navigationNav .navEl{
+  list-style: none;
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.notes-page header .navigationNav .navEl .notesNav{
+  text-transform: uppercase;
+}
+
+nav .notesNav {
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+  text-transform: uppercase;
+
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+
+nav .notesNav::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2.5px;
+  margin: 0 auto;
+  background-color: #88CB88;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+
+nav .notesNav:hover::after {
+  width: 30px;
+}
+
+.note-wrapper {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.card {
+  width: 300px;
+  background-color: rgb(241, 245, 249);
+  padding: 20px;
+  position: relative;
+  margin: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: .3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: .5px .5px 20px rgb(153, 164, 170);
+}
+
+.card .close {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+.card .close svg {
+  fill: #b80808;
+  opacity: 0.5;
+  scale: 1.28;
+  margin-top: 20px;
+}
+
+.card .close svg:hover {
+  fill: #b80808;
+  scale: 1.2;
+  opacity: 0.7;
+}
+
+.card .close svg:active {
+  fill: #830d0d;
+  opacity: 0.8;
+}
+
+.close:hover::after {
+  content: 'delete';
+  position: absolute;
+  top: -140;
+  left: 100%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.card h4 {
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card .text-wrapper {
+  width: 100%;
+  height: 150px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+  margin: 10px 0;
+  color: #5a5a5a;
+}
+
+.card .date {
+  text-align: left;
+  color: #5a5a5a;
+  display: flex;
+  align-items: center;
+}
+
+.card .date svg {
+  fill:#1a1a1a;
+  opacity: 0.8;
+  margin-right: 0.5rem;
+}
+
+.card-footer {
+  margin-top: 1rem;
+  border-top: 2px dashed rgba(96, 94, 94, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+}
+
+.usernameText {
+  margin-top: 20px;
+}
+
+.card-footer svg {
+  fill: #88CB88;
+  scale: 1.7;
+}
+
+.card-footer .edit svg {
+  padding-right: 20px;
+  margin-bottom: 2px;
+}
+
+.card-footer svg:hover {
+  fill: #10b010;
+  scale: 1.6;
+}
+
+.editTooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.editTooltip::after {
+  content: 'edit';
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: -150%;
+  width: 40px;
+  text-align: center;
+  text-transform: lowercase;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.editTooltip:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.youTooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.youTooltip::after {
+  content: 'you';
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 110%;
+  bottom: -25%;
+  width: 40px;
+  text-align: center;
+  text-transform: lowercase;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.youTooltip:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 2px dashed rgba(96, 94, 94, 0.4);
+  background-color: transparent;
+  height: 320px;
+  box-shadow: none;
+}
+
+.end .textEnd {
+  margin: auto;
+  color: rgba(96, 94, 94, 0.5);
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.end:hover {
+  box-shadow: none;
+  background-color: #A9E2A8;
+  scale: 0.94;
+}
+
+.end:active {
+  box-shadow: none;
+  background-color: #7ac678;
+}
+
+/* ------------ CREATE NOTES PAGE ------------ */
+
+.create-note {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgb(95, 95, 95);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.create-note h2 {
+  text-transform: uppercase;
+  margin: 10px 0;
+  margin-left: 80px;
+}
+
+.create-note .row {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.create-note input,
+.create-note button {
+  width: 100%;
+  height: 40px;
+  padding: 0 5px;
+}
+
+.create-note button {
+  width: 100%;
+}
+
+.create-note input,
+.create-note textarea {
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(247, 250, 253);
+}
+
+.create-note input:hover,
+.create-note textarea:hover,
+.create-note input:focus,
+.create-note textarea:focus {
+  border: none;
+  border-radius: 2px;
+  outline: solid 2px #88CB88;
+}
+
+.create-note label {
+  font-weight: 600;
+}
+
+.create-note textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 0 5px;
+}
+
+.create-note button {
+    height: 49px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: #A9E2A8;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 10px 0;
+    transition: .5s;
+    font-size: 15px;
+}
+
+.create-note button:hover {
+  background-color: #88CB88;
+}
+
+
+@media (max-width: 1885px) {
+  .note-wrapper {
+    width: 1000px;
+  }
+}
+
+@media (max-width: 1414px) {
+  .note-wrapper {
+    width: 660px;
+  }
+}
+
+@media (max-width: 942px) {
+  .note-wrapper {
+    width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .create-note {
+    padding: 15px;
+  }
+
+  .logo {
+    width: 20%;
+  }
+}

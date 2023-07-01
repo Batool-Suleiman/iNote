@@ -1,0 +1,256 @@
+/* 
+  #004320 
+  #6d5d4b; 
+  #A9E2A8 green
+  #88CB88 darker green
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700&display=swap');
+
+
+.homePage {
+  font-family: "Nunito", sans-serif;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.rowHome img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.aLink {
+  display: inline-block;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.rowHome {
+  display: flex;
+}
+
+/* Navigation */
+
+.containerHome {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  padding: 1.5em 0;
+}
+
+.logoHome {
+  align-items: center;
+}
+
+.logoHome img {
+  max-width: 30%;
+}
+
+nav ul {
+  gap: 2em;
+  align-items: center;
+}
+
+nav .aLink {
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+
+nav .aLink::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2.5px;
+  margin: 0 auto;
+  background-color: #88CB88;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+
+nav li:nth-of-type(2) .aLink::after {
+  all: unset;
+}
+
+nav .aLink:hover::after {
+  width: 30px;
+}
+
+nav li:nth-of-type(2) .aLink {
+  width: 150px;
+  height: 49px;
+  border: none;
+  outline: none;
+  border-radius: 49px;
+  cursor: pointer;
+  background-color: #A9E2A8;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  transition: .5s;
+  text-align: center;
+  line-height: 55px;
+  font-size: 1.1rem;
+  height: 55px;
+}
+
+nav li:nth-of-type(2) .aLink:hover, .hero .aLink:hover {
+  background-color: #88CB88;
+}
+
+/* End of Navigation */
+
+/* Hero */
+
+.hero {
+  gap: 2em;
+  align-items: center;
+  min-height: calc(90vh - 93.6px);
+}
+
+.hero>* {
+  flex: 1 1 25em;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5vw, 70px);
+}
+
+.hero h2 {
+  font-size: clamp(20px, 3vw, 40px);
+}
+
+.hero p {
+  font-size: 30px;
+  padding: 1em 0;
+}
+
+.hero .aLink {
+  width: 150px;
+  height: 49px;
+  border: none;
+  outline: none;
+  border-radius: 49px;
+  cursor: pointer;
+  background-color: #A9E2A8;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  transition: .5s;
+  text-align: center;
+  line-height: 55px;
+  font-size: 1.1rem;
+  height: 55px;
+}
+
+.hero .aLink:hover {
+  background-color: #88CB88;
+}
+
+/* End of Hero */
+
+/* Media */
+
+@media screen and (max-width: 900px) {
+  .hero {
+    gap: 2em;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    min-height: calc(100vh - 93.6px); 
+  }
+
+  .toggleMenu {
+    position: absolute;
+    right: 5%;
+    background-image: url("../components/images/bars.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    width: 30px;
+    height: 30px;
+    padding: 2em;
+    z-index: 1000;
+    transition: background-sizebackground-size 0.3s ease-in-out;
+    -webkit-transition: background-size 0.3s ease-in-out;
+    -moz-transition: background-size 0.3s ease-in-out;
+    -ms-transition: background-size 0.3s ease-in-out;
+    -o-transition: background-size 0.3s ease-in-out;
+  }
+
+  .toggleMenu.active {
+    position: fixed;
+    background-image: url("../components/images/close.png");
+    background-size: 50px;
+  }
+
+  .navigation {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-height: 0;
+    opacity: 0;
+    transform-origin: top;
+    transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+  }
+
+  .navigation.active {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    max-height: 100%;
+    opacity: 1;
+    background-color: #88CB88;
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+  }
+
+  nav .aLink {
+    color: #fff;
+  }
+
+  nav .aLink::after {
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+/* End of Media */
